@@ -10,8 +10,14 @@ header {
 
 input {
     text-align: center;
+    background-color: white;
 }
 
 button {
     margin-left: 40px;
 }
+
+section h2 {
+    color: blueviolet;
+}
+
