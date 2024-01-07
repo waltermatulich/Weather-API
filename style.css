@@ -1,0 +1,9 @@
+
+header {
+    color: black;
+    background: linear-gradient(to right, blue 0%, violet 50%, rgb(51, 4, 51) 100%);
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    
+}
