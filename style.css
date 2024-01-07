@@ -5,5 +5,13 @@ header {
     text-align: center;
     padding-top: 1px;
     padding-bottom: 2px;
-    
+
+}
+
+input {
+    text-align: center;
+}
+
+button {
+    margin-left: 40px;
 }
