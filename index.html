@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather API application</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <header>
     <h1>Weather Dashboard</h1>
+    <div class="hero">
 </header>
+
 <body>
-    <div class="container">
-        <h2>Search for a city!</h2>
-        <input type="text" id="search-input" placeholder="Enter a city!">
-        <div>
+    <div class="search-city-container">
+        <h4>Search for a city!</h4>
+        <input type="text" id="city-input" placeholder="Enter a city!">
+        </div>
         <button type="button" id="search-button">Search!</button>
+    <div id="history-container">
     </div>
-    <section id="search-history">
-        <h2>Search History:</h2>
-    </section>
 
-    <section id="current-weather">
+    <div id="weather-container">
 
-    </section>
+    </div>
 
-    <section id="forcast">
-        <h3>5 day forcast!</h3>
-    </section>
+    <div id="forcast-container">
+        <h3>5 Day Forecast!</h3>
+    </div>
+   
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
