@@ -1,1 +1,3 @@
 # Weather-API
+
+Herre is an application where you type in a city, you get a 5 day forecast along with the current days weather. In the search history bar the searched items remain and you can tap them and their current and future 5 day weather data will be displayed. I accessed this information via APIs in this case a weather API in order to obtain current data worldwide! this website also works for cities outside the United States. Cheers!
