@@ -7,7 +7,7 @@ async function getWeatherForecast() {
   localStorage.setItem("Weather", JSON.stringify(previousSearch));
   try {
     // Fetch current weather data
-    const currentWeatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityTarget}&appid=${APIKey}`;
+    const currentWeatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityTarget}&units=imperial&appid=${APIKey}`;
     const currentWeatherResponse = await fetch(currentWeatherAPIUrl);
     const currentWeatherData = await currentWeatherResponse.json();
 
@@ -15,7 +15,7 @@ async function getWeatherForecast() {
     console.log(currentWeatherData);
 
     // Fetch 5-day forecast data
-    const forecastAPIUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityTarget}&appid=${APIKey}&units=metric&cnt=5`;
+    const forecastAPIUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityTarget}&appid=${APIKey}&units=imperial&cnt=5`;
     const forecastResponse = await fetch(forecastAPIUrl);
     const forecastData = await forecastResponse.json();
 
@@ -42,7 +42,8 @@ function displayCurrentWeather(data) {
   weatherContainer.innerHTML = `
     <h2>${data.name} Weather</h2>
     <p>Date: ${currentDate.toDateString()}</p>
-    <p>Temperature: ${data.main.temp}°C</p>
+    <img class="current-day" src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+    <p>Temperature: ${data.main.temp}°F</p>
     <p>Humidity: ${data.main.humidity}%</p>
     <p>Wind Speed: ${data.wind.speed} m/s</p>
   `;
@@ -56,9 +57,10 @@ function displayForecast(data, city) {
     const date = new Date(day.dt * 1000); // Convert timestamp to milliseconds
 
     htmlCode += `
-      <div class="forecast-card card" style="width: 18rem;">
+      <div class="forecast-card card col-2">
         <p>Date: ${date.toDateString()}</p>
-        <p>Temperature: ${day.main.temp_max}°C</p>
+        <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png">
+        <p>Temperature: ${day.main.temp_max}°F</p>
         <p>Humidity: ${day.main.humidity}%</p>
         <p>Wind Speed: ${day.wind.speed} m/s</p>
       </div>
@@ -88,7 +90,7 @@ function addToHistory() {
     console.log("City",city)
     try {
       // Fetch current weather data
-      const currentWeatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+      const currentWeatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIKey}`;
       const currentWeatherResponse = await fetch(currentWeatherAPIUrl);
       const currentWeatherData = await currentWeatherResponse.json();
   
@@ -96,7 +98,7 @@ function addToHistory() {
       console.log(currentWeatherData);
   
       // Fetch 5-day forecast data
-      const forecastAPIUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}&units=metric&cnt=5`;
+      const forecastAPIUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}&units=imperial&cnt=5`;
       const forecastResponse = await fetch(forecastAPIUrl);
       const forecastData = await forecastResponse.json();
   

@@ -1,5 +1,5 @@
 :root {
-    background-color: rgb(192, 192, 192);
+    background-color: grey;
 }
 header {
     color: black;
@@ -44,3 +44,14 @@ header h1 {
     display: flex;
     justify-content: flex-end;
   }
+
+  .forecast-card {
+    margin: 0 10px;
+    background-color: rgb(128, 128, 128);
+  }
+
+  .current-day {
+    width: 100px;
+    height: auto;
+  }
+
